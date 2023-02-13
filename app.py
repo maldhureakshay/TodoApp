@@ -11,7 +11,7 @@ mongo = PyMongo(app)
 todos_collection = mongo.db.todos
 
 
-# list all todos api
+# list all todos api in decending order
 @app.route('/')
 def index():
     todos = todos_collection.find().sort("_id", -1)
